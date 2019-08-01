@@ -11,7 +11,7 @@ Here is the collection of code from upper division CS165A - Artificial Intellige
 
 ***
 
-## Naive Bayes Classifier
+# Naive Bayes Classifier
 
 ### General
 I’ve implemented bag of words multinomial Naïve Bayes Classifier. The code is tested on Authors classification data taken from UCI database.
