@@ -3,6 +3,7 @@ Here is the collection of code from upper division CS165A - Artificial Intellige
 
 ### Projects list (all are implemented in Python 3)
 - **Naive Bayes Classifier**
+- **HEX Bot Player**
 - **C4.5 algorithm**
 - **Logistic Regression with SGD**
 - **Perceptron**
