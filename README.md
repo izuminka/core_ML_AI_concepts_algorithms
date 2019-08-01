@@ -1,3 +1,5 @@
+# Organization
+
 ## Naive Bayes Classifier
 
 ### General
