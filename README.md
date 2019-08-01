@@ -8,7 +8,6 @@ Here is the collection of code I wrote for my upper division CS165A - Artificial
 - **Random Forrest algorithm**
 - **Logistic Regression with SGD**
 - **Perceptron**
-- **Perceptron**
 - **Multilayer perceptron**
 - **K Means**
 
