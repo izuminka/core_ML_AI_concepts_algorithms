@@ -12,11 +12,6 @@ Here is the collection of code I wrote for my upper division CS165A - Artificial
 - **Multilayer perceptron**
 - **K Means**
 
-### Tensorflow/Pytorch Projects list
-- **CNN**
-- **RNN**
-- **Audio, pictures, video**
-
 &nbsp;
 &nbsp;
 &nbsp;
