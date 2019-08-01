@@ -33,6 +33,8 @@ b. P_tc - conditional probability P(word | author)
 &nbsp;
 &nbsp;
 &nbsp;
+&nbsp;
+&nbsp;
 
 ## HEX Bot Player.
 Bot for [HEX game](https://en.wikipedia.org/wiki/Hex_(board_game)) using standard Alpha Beta search.
