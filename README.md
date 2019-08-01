@@ -5,6 +5,7 @@ Here is the collection of code I wrote for my upper division CS165A - Artificial
 - **Naive Bayes Classifier**
 - **HEX Bot Player**
 - **C4.5 algorithm**
+- **Random Forrest algorithm**
 - **Logistic Regression with SGD**
 - **Perceptron**
 - **K Means**
