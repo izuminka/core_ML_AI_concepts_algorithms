@@ -25,8 +25,7 @@ b. P_tc - conditional probability P(word | author)
 5. Using probability tables computes the given unseen BOW samples
 6. Performance metric is computed, times, etc. gets printed
 
-
-
+***
 
 ## HEX Bot Player.
 Bot for [HEX game](https://en.wikipedia.org/wiki/Hex_(board_game)) using standard Alpha Beta search.
