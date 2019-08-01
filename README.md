@@ -2,11 +2,11 @@
 Here is the collection of code from upper division CS165A - Artificial Intelligence and CS165B Machine Learning classes I took at UCSB.
 
 ### Projects list (all are implemented in Python 3)
-#### Naive Bayes Classifier
-#### C4.5 algorithm
-#### Logistic Regression with SGD
-#### Perceptron
-#### K Means.
+1.  Naive Bayes Classifier
+2.  C4.5 algorithm
+3.  Logistic Regression with SGD
+4.  Perceptron
+5.  K Means.
 
 ## Naive Bayes Classifier
 
