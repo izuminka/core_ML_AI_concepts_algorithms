@@ -9,6 +9,7 @@ Here is the collection of code from upper division CS165A - Artificial Intellige
 - **K Means**
 - **Classifier**
 
+***
 
 ## Naive Bayes Classifier
 
