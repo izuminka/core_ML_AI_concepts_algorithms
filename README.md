@@ -8,7 +8,6 @@ Here is the collection of code I wrote for my upper division CS165A - Artificial
 - **Logistic Regression with SGD**
 - **Perceptron**
 - **K Means**
-- **Classifier**
 
 &nbsp;
 &nbsp;
