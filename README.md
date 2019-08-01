@@ -28,7 +28,7 @@ b. P_tc - conditional probability P(word | author)
 
 
 ## HEX Bot Player.
-Bot for ([HEX game] https://en.wikipedia.org/wiki/Hex_(board_game)) using standard Alpha Beta search.
+Bot for ([HEX game](https://en.wikipedia.org/wiki/Hex_(board_game)) using standard Alpha Beta search.
 
 ### Architecture
 I’ve used Python to complete the assignment. I’ve implemented alpha beta algorithm
