@@ -1,7 +1,7 @@
 # Organization
 Here is the collection of code I wrote for my upper division CS165A - Artificial Intelligence and CS165B Machine Learning classes I took at UCSB. Projects are implemented from scratch and demostrate my undestanding of core concepts in AI and ML.
 
-### Projects list (all are implemented in Python 3)
+### From Scratch Projects list (all are implemented in Python 3)
 - **Naive Bayes Classifier**
 - **HEX Bot Player**
 - **C4.5 algorithm**
@@ -11,6 +11,11 @@ Here is the collection of code I wrote for my upper division CS165A - Artificial
 - **Perceptron**
 - **Multilayer perceptron**
 - **K Means**
+
+### Tensorflow/Pytorch Projects list
+- **CNN**
+- **RNN**
+- **Audio, pictures, video**
 
 &nbsp;
 &nbsp;
