@@ -1,5 +1,5 @@
 # Organization
-Here is the collection of code from upper division CS165A - Artificial Intelligence and CS165B Machine Learning classes I took at UCSB.
+Here is the collection of code from upper division CS165A - Artificial Intelligence and CS165B Machine Learning classes I took at UCSB. Projects are implemented from scratch and demostrate the undestanding of core concepts in AI and ML.
 
 ### Projects list (all are implemented in Python 3)
 - **Naive Bayes Classifier**
