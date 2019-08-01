@@ -13,7 +13,8 @@ Here is the collection of code from upper division CS165A - Artificial Intellige
 &nbsp;
 &nbsp;
 &nbsp;
-
+&nbsp;
+&nbsp;
 
 ## Naive Bayes Classifier
 
@@ -29,7 +30,9 @@ b. P_tc - conditional probability P(word | author)
 5. Using probability tables computes the given unseen BOW samples
 6. Performance metric is computed, times, etc. gets printed
 
-***
+&nbsp;
+&nbsp;
+&nbsp;
 
 ## HEX Bot Player.
 Bot for [HEX game](https://en.wikipedia.org/wiki/Hex_(board_game)) using standard Alpha Beta search.
