@@ -31,8 +31,7 @@ b. P_tc - conditional probability P(word | author)
 Bot for [HEX game](https://en.wikipedia.org/wiki/Hex_(board_game)) using standard Alpha Beta search.
 
 ### Architecture
-I’ve used Python to complete the assignment. I’ve implemented alpha beta algorithm
-with a simple evaluation function. I’ve implemented class Hex which incorporates everything
+I’ve implemented alpha beta algorithm with a simple evaluation function. I’ve implemented class Hex which incorporates everything
 needed to play the game. Key functions: alphabeta(), evalFun(), bfs().
 
 ### Search
