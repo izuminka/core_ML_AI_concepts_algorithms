@@ -5,7 +5,7 @@ The projects are implemented in Python 3. The projects are Naive Bayes Classifie
 ## Naive Bayes Classifier
 
 ### General
-I’ve implemented bag of words multinomial Naïve Bayes in python3
+I’ve implemented bag of words multinomial Naïve Bayes Classifier. The code is tested on Authors classification data taken from UCI database.
 ### Procedure
 1. Code parses the input file and imports data
 2. Each sample for each author gets converted to BOW (bag of words).
