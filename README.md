@@ -4,7 +4,7 @@ Here is the collection of code I wrote for my upper division CS165A - Artificial
 ### Projects list (all are implemented in Python 3)
 - **Naive Bayes Classifier**
 - **HEX Bot Player**
-- **Desision Trees: C4.5 and Random Forrest**
+- **Tree based: C4.5 and Random Forrest**
 - **Logistic Regression with SGD**
 - **Perceptron**
 - **Multilayer perceptron**
