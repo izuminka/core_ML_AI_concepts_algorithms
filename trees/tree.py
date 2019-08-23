@@ -133,18 +133,6 @@ def get_entropy(data):
     entropy = counts_to_entropy(counts)
     return entropy
 
-# def entopy_track(count_dict, entropy_dict):
-#     """Test function.
-#
-#     """
-#     count_tup = tuple(count_dict.items())
-#     if count_tup not in entropy_dict:
-#         entropy = counts_to_entropy(count_dict)
-#         entropy_dict[count_tup] = counts_to_entropy(count_dict)
-#     else:
-#         entropy = entropy_dict[count_tup]
-#     return entropy, entropy_dict
-
 
 def find_best_threshold(data, feature):
     """Find threshold of the feature with a best gain
