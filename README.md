@@ -32,6 +32,21 @@ b. P_tc - conditional probability P(word | author)
 5. Using probability tables computes the given unseen BOW samples
 6. Performance metric is computed, times, etc. gets printed
 
+
+&nbsp;
+&nbsp;
+&nbsp;
+&nbsp;
+&nbsp;
+
+## C4.5 algorithm
+Partitions data in order to minimize total entropy:
+
+    - sum(prob(event) * log(prob(event)))
+
+### Architecture
+
+
 &nbsp;
 &nbsp;
 &nbsp;
@@ -49,19 +64,6 @@ Algorithm uses Standard Alpha Beta search. I cap the time to insure the search w
 sec. I additionally tried to cap the depth, but unsuccessfully. I’ve implemented
 A quick evaluation function that awards making straight connections, or connections that are
 only slightly off course. I additionally penalize if the opponent is cutting of my path.
-
-&nbsp;
-&nbsp;
-&nbsp;
-&nbsp;
-&nbsp;
-
-## C4.5 algorithm
-Partitions data in order to minimize total entropy:
-
-    - sum(prob(event) * log(prob(event)))
-
-### Architecture
 
 
 
