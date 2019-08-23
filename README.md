@@ -3,8 +3,10 @@ Here is the collection of projects I wrote for my upper division CS165A - Artifi
 
 ### Projects list (all are implemented in Python 3)
 - **Naive Bayes Classifier**
-- **HEX Bot Player (minimax with alpha-beta pruning)**
 - **Tree based: C4.5 and Random Forrest**
+- **HEX Bot Player (minimax with alpha-beta pruning)**
+
+### Uploading soon
 - **Logistic Regression with SGD**
 - **Perceptron**
 - **Multilayer perceptron**
