@@ -39,7 +39,7 @@ b. P_tc - conditional probability P(word | author)
 &nbsp;
 &nbsp;
 
-## C4.5 algorithm
+## Trees: C4.5 and Random Forrest
 Partitions data in order to minimize total entropy:
 
     - sum(prob(event) * log(prob(event)))
