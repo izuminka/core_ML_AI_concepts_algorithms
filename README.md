@@ -12,12 +12,7 @@ Here is the collection of projects I wrote for my upper division CS165A - Artifi
 - **Multiplayer perception**
 - **K Means**
 
-
-&nbsp;
-&nbsp;
-&nbsp;
-&nbsp;
-&nbsp;
+---
 
 ## Naive Bayes Classifier
 
@@ -33,11 +28,7 @@ b. P_tc - conditional probability P(word | author)
 5. Using probability tables computes the given unseen BOW samples
 6. Performance metric is computed, times, etc. gets printed
 
-&nbsp;
-&nbsp;
-&nbsp;
-&nbsp;
-&nbsp;
+---
 
 ## Trees: C4.5 and Random Forest
 C45.py and random_forrest.py include the algorithms and are dependent on tree.py and data.py.
@@ -63,12 +54,7 @@ data.py contains data samples to test the algorithms. Random fore
 7. A list of rand_decision_tree is created, constituting a random forest
 8. Function dict_average_resuts_rand(point, forest) predicts the label of the point
 
-
-&nbsp;
-&nbsp;
-&nbsp;
-&nbsp;
-&nbsp;
+---
 
 ## HEX Bot Player
 Bot for [HEX game](https://en.wikipedia.org/wiki/Hex_(board_game)) using minimax with alpha-beta pruning.
