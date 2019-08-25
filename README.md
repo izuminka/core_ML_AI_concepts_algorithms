@@ -39,7 +39,6 @@ b. P_tc - conditional probability P(word | author)
 &nbsp;
 &nbsp;
 
-<<<<<<< HEAD
 ## Trees: C4.5 and Random Forest
 C45.py and random_forrest.py include the algorithms and are dependent on tree.py and data.py.
 data.py contains data samples to test the algorithms. Random fore
@@ -63,18 +62,7 @@ data.py contains data samples to test the algorithms. Random fore
 6. rand_decision_tree returns class Tree (def in tree.py): learned_tree
 7. A list of rand_decision_tree is created, constituting a random forest
 8. Function dict_average_resuts_rand(point, forest) predicts the label of the point
-=======
-## Trees: C4.5 and Random Forrest
-C45.py and random_forrest.py include the algorithms and are dependent on tree.py and data.py.
-data.py contains data samples to test the algorithms. 
 
-### C4.5 Architecture
-Core function is c45. Fun inputs the list of datapoints and int cutoff dupth of the tree. The function recursively builds the tree untill either the cutoff depth is reached or there is no split that gains information. The best split of the data is found according to get the maximum gain.
-
-### Random Forrest Architecture
-The core function is rand_decision_tree. Fun inputs list of datapoints and int cutoff dupth of the tree. It is similar to c45 function, but the feature to split on is chosen randomly, not according to the best gain. 
-The forrest is a list of such trees.
->>>>>>> 1eb5a5edb1733b6caeac89f6b7ffd09c45ce015b
 
 &nbsp;
 &nbsp;
