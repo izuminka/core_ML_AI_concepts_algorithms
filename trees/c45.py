@@ -16,7 +16,7 @@ def c45(data, max_levels):
     if max_levels <= 0:  # the maximum level depth is reached
         return make_leaf(data)
     feature, threshold = find_best_split(data)
-    if threshold == None:  # there is no split that gains information
+    if threshold is None:  # there is no split that gains information
         return make_leaf(data)
     new_tree = Tree()
     new_tree.leaf = False
@@ -33,8 +33,8 @@ if __name__ == "__main__":
 
     train = get_train_data()
     test = get_test_data()
-
-    tree = c45(train, 9)
+    TREE_DEPTH = 9
+    tree = c45(train, TREE_DEPTH)
     predictions = [predict(tree, point) for point in test]
     acc = accuracy(test, predictions)
     print(acc)

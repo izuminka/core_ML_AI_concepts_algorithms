@@ -153,7 +153,7 @@ def find_best_threshold(data, feature):
         feature (type): Description of parameter `feature`.
 
     Returns:
-        tuple: (float) best_gain, (str) best_threshold
+        tuple: (float) best_gain, (float) best_threshold
 
     """
     sorted_data = sorted(
@@ -168,18 +168,13 @@ def find_best_threshold(data, feature):
     best_threshold = None
     for i in range(len(sorted_data)):
         # preventing repeated vals by cheking the previous vals
-        if (
-            i > 0
-            and sorted_data[i - 1].values[feature] == sorted_data[i].values[feature]
-        ):
+        if (i > 0 and sorted_data[i - 1].values[feature] == sorted_data[i].values[feature]):
             pass
         else:
             left_tot = i
             right_tot = total_points - i
-            curr = (
-                counts_to_entropy(left_count) * left_tot
-                + counts_to_entropy(right_count) * right_tot
-            ) / total_points
+            curr = (counts_to_entropy(left_count) * left_tot
+                    + counts_to_entropy(right_count) * right_tot) / total_points
             gain = entropy - curr
             if gain > best_gain:
                 best_gain = gain
