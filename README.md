@@ -5,7 +5,7 @@ implemented in Python from scratch and demonstrate my understanding of core conc
 and algorithms in AI and ML.
 
 ### Projects list (all are implemented in Python 3)
-- **Naive Bayes Classifier**
+- **[Naive Bayes Classifier](https://github.com/izuminka/core_ML_AI_concepts_algorithms/tree/master/Naive_Bayes_Classifier)**
 - **Trees: C4.5 and Random Forest**
 - **Logistic Regression with SGD**
 
