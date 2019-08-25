@@ -1,5 +1,6 @@
 from tree import *
 
+
 def rand_decision_tree(data, max_levels):
     """Create a descision tree with a random split. The algorithm is
     simalar to C4.5, except the best split function is substituted for
@@ -51,9 +52,8 @@ def dict_average_resuts_rand(point, forest):
     return {k: sum(trees_pred[k]) / len(forest) for k in trees_pred}
 
 
-
 if __name__ == '__main__':
-    #load dummy data
+    # load dummy data
     from data import get_train_data, get_test_data
 
     train = get_train_data()

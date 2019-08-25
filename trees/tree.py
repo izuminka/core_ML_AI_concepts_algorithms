@@ -5,7 +5,17 @@ import random
 class Tree:
     """Tree node
 
+    Args:
+        leaf (bool): if the tree node is a leaf node
+        prediction (dict): {label1: prob(label1), label2: prob(label2)}
+        feature (int): data feature index
+        threshold (float): threshhold value of the feature
+        left (list): datapoints of class Point, def in data.py, left of threshold
+        right (list): datapoints of class Point, def in data.py, right of threshold
+        gain (float): info gain
+
     """
+
     leaf = True
     prediction = None
     feature = None
@@ -133,18 +143,6 @@ def get_entropy(data):
     entropy = counts_to_entropy(counts)
     return entropy
 
-# def entopy_track(count_dict, entropy_dict):
-#     """Test function.
-#
-#     """
-#     count_tup = tuple(count_dict.items())
-#     if count_tup not in entropy_dict:
-#         entropy = counts_to_entropy(count_dict)
-#         entropy_dict[count_tup] = counts_to_entropy(count_dict)
-#     else:
-#         entropy = entropy_dict[count_tup]
-#     return entropy, entropy_dict
-
 
 def find_best_threshold(data, feature):
     """Find threshold of the feature with a best gain
@@ -158,7 +156,8 @@ def find_best_threshold(data, feature):
         tuple: (float) best_gain, (str) best_threshold
 
     """
-    sorted_data = sorted(data, key=lambda k: k.values[feature])  # sort data by feature
+    sorted_data = sorted(
+        data, key=lambda k: k.values[feature])  # sort data by feature
     total_points = float(len(data))
 
     right_count = count_labels(sorted_data)
@@ -169,13 +168,18 @@ def find_best_threshold(data, feature):
     best_threshold = None
     for i in range(len(sorted_data)):
         # preventing repeated vals by cheking the previous vals
-        if i > 0 and sorted_data[i - 1].values[feature] == sorted_data[i].values[feature]:
+        if (
+            i > 0
+            and sorted_data[i - 1].values[feature] == sorted_data[i].values[feature]
+        ):
             pass
         else:
             left_tot = i
             right_tot = total_points - i
-            curr = (counts_to_entropy(left_count) * left_tot + counts_to_entropy(
-                right_count) * right_tot) / total_points
+            curr = (
+                counts_to_entropy(left_count) * left_tot
+                + counts_to_entropy(right_count) * right_tot
+            ) / total_points
             gain = entropy - curr
             if gain > best_gain:
                 best_gain = gain

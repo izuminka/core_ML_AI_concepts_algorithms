@@ -1,5 +1,6 @@
 from tree import *
 
+
 def c45(data, max_levels):
     """Predict the labeling for a point.
 
@@ -26,10 +27,10 @@ def c45(data, max_levels):
     return new_tree
 
 
-
-if __name__ == '__main__':
-    #load dummy data
+if __name__ == "__main__":
+    # load dummy data
     from data import get_train_data, get_test_data
+
     train = get_train_data()
     test = get_test_data()
 
