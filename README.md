@@ -40,12 +40,15 @@ b. P_tc - conditional probability P(word | author)
 &nbsp;
 
 ## Trees: C4.5 and Random Forrest
-Partitions data in order to minimize total entropy:
+C45.py and random_forrest.py include the algorithms and are dependent on tree.py and data.py.
+data.py contains data samples to test the algorithms. 
 
-    - sum(prob(event) * log(prob(event)))
+### C4.5 Architecture
+Core function is c45. Fun inputs the list of datapoints and int cutoff dupth of the tree. The function recursively builds the tree untill either the cutoff depth is reached or there is no split that gains information. The best split of the data is found according to get the maximum gain.
 
-### Architecture
-
+### Random Forrest Architecture
+The core function is rand_decision_tree. Fun inputs list of datapoints and int cutoff dupth of the tree. It is similar to c45 function, but the feature to split on is chosen randomly, not according to the best gain. 
+The forrest is a list of such trees.
 
 &nbsp;
 &nbsp;
