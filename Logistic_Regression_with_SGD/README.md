@@ -1,7 +1,7 @@
-## Logistic Regression with SGD
+# Logistic Regression with SGD
 
 
-### Architecture
+## Architecture
 The Logistic Regression performed with Stochastic Gradient Descent for model update.
 
     Loss = (Prediction - Truth)^2 + Lambda * || W ||
@@ -10,7 +10,7 @@ Derivative of the Loss function is calculated with respect to the time step and
 the weight is updated. To control the learning process learning rate is multiplied
 by the derivative before the weight of each feature is updated.
 
-### Procedure
+## Procedure
 0. (list) training_data containing points of class Point (def in data.py) is imported
 
 1. The core function is train(data_points, epochs, rate, lam), where
