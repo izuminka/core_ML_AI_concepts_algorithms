@@ -13,7 +13,7 @@ data.py. data.py contains data samples to test the algorithms. Random fore
 
 To test the algorithm run:
 
-    python trees/c45.py
+    python c45.py
 
 ### Random Forest Architecture and Procedure
 
@@ -28,4 +28,4 @@ To test the algorithm run:
 
 To test the algorithm run:
 
-    python trees/random_forest.py
+    python random_forest.py
