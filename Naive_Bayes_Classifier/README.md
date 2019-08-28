@@ -15,4 +15,4 @@ b. P_tc - conditional probability P(word | author)
 
 To test the algorithm run:
 
-    python NaiveBayesClassifier.py
+    python nbc.py

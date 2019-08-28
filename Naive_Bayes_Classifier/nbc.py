@@ -3,16 +3,18 @@ import time
 
 
 def get_raw_labeled_data(file_name, out_type):
-    """read data and put in dict format
+    """Read data and put in dict or list format.
 
     Args:
-        file_name (str): name if the inputting file
-        out_type (str): choice of import: dict or string
+        file_name (str): Name if the inputting file
+        out_type (str): Choice of import: dict or string
 
     Returns:
-        dataset (dict) or (list): organized dataset
-        if (dict): {author: [corpus]}
-        if (list): [[labels_author_1..labels_author_n],[corpus_author_1..corpus_author_n] in order of the inputted text
+        dict or list: organized dataset
+        if dict: {author: [corpus]}
+        if list: [[labels_author_1..labels_author_n],
+                 [corpus_author_1..corpus_author_n] in order of the inputted text
+
     """
     f = open(file_name, errors='ignore')
     samples_authors = f.readlines()
@@ -38,13 +40,15 @@ def get_raw_labeled_data(file_name, out_type):
 
 
 def bag_of_words(text_string):
-    """crete bow dictionary counting the number of times the word occurs in text_string
+    """Crete bow dictionary counting the number of times the word occurs in
+    text_string
 
     Args:
         text_string (string): the imported sample of text of author_i
 
     Returns:
-        bow (dict): {word:num_occurances}
+        dict: {word:num_occurances}
+
     """
 
     words_ls = text_string.split()
@@ -58,13 +62,14 @@ def bag_of_words(text_string):
 
 
 def combine_bows(bow_ls):
-    """make disjoint union of all provided bows for a given label/author
+    """Make disjoint union of all provided bows for a given label/author
 
     Args:
         bow_ls (list): [bow_sample_1..bow_sample_n], bow_sample_i = {word:occurance_in_sample_i}
 
     Returns:
-        combined_bow (dict): {word:total_occurance_in_samples}
+        dict: {word:total_occurance_in_samples}
+
     """
 
     combined_bow = {}
@@ -78,13 +83,15 @@ def combine_bows(bow_ls):
 
 
 def parse_raw_data_bow(dataset):
-    """create bow representation for each author and sample
+    """Create bow representation for each author and sample
 
     Args:
-        dataset: dataset (dict): {author: [corpus]} where corpus is [sample_1..sample_n], sample_i (str)
+        dataset: dataset (dict): {author: [corpus]} where corpus is
+                 [sample_1..sample_n], sample_i (str)
 
     Returns:
-        bow_data_set (dict) : {author: {word:occurance_in_all_samples}}
+        dict: {author: {word:occurance_in_all_samples}}
+
     """
     vocabulary = []
     bow_data_set = {}
@@ -109,7 +116,8 @@ def get_P_tc(authors_total_words, vocab, bow_data_set):
         bow_data_set (dict): {author: {word:multiplicity_across_all_corpus}}
 
     Returns:
-        P_tc (dict): {author: {word:prob}} Conditional probability of word given class, for each author
+        dict: {author: {word:prob}} Conditional probability of word given
+              class, for each author
 
     """
     authors_ls = list(authors_total_words.keys())
@@ -121,45 +129,50 @@ def get_P_tc(authors_total_words, vocab, bow_data_set):
                 word_mult = 0
             else:
                 word_mult = bow_data_set[author][word]
-            P_tc[author][word] = (word_mult + 1) / (authors_total_words[author] + total_unique_words)
+            P_tc[author][word] = (
+                word_mult + 1) / (authors_total_words[author] + total_unique_words)
     return P_tc
 
 
 def get_probabilities(training_samples_stat, vocab, bow_data_set):
-    """
-    Calculate probabilities for all labels given training data
+    """Calculate probabilities for all labels given training data
     Args:
         training_samples_stat (dict): {author: number_samples}
         vocab (list): list of all unique words across all samples all authors
         bow_data_set (dict): {author: {word:multiplicity_across_all_corpus}}
 
     Returns:
-        P_c (dict): {author: num_samples_corpus/total_samples}
-        P_tc (dict): {author: {word:prob}} Conditional probability of word given class, for each author
+        tuple: P_c (dict): {author: num_samples_corpus/total_samples}
+               P_tc (dict): {author: {word:prob}} where prob is conditional
+                            probability of word given class, for each author
 
     """
     total_text_samples = sum(training_samples_stat.values())
-    P_c = {a: training_samples_stat[a] / total_text_samples for a in training_samples_stat}
+    P_c = {a: training_samples_stat[a] /
+           total_text_samples for a in training_samples_stat}
 
-    authors_total_words = {a: sum(bow_data_set[a].values()) for a in bow_data_set}
+    authors_total_words = {
+        a: sum(bow_data_set[a].values()) for a in bow_data_set}
     P_tc = get_P_tc(authors_total_words, vocab, bow_data_set)
 
     return P_c, P_tc
 
 
 def train(training_file_name):
-    """
-    Training function
+    """Training function
     Args:
         training_file_name (str): name of the training file
 
     Returns:
-        P_c (dict): {author: num_samples_corpus/total_samples}
-        P_tc (dict): {author: {word:prob}} Conditional probability of word given class, for each author
-        vocab_len (int): number of all unique words across all samples all authors
+        tuple: P_c (dict): {author: num_samples_corpus/total_samples}
+               P_tc (dict): {author: {word:prob}} where prob is conditional
+                            probability of word given class, for each author
+               vocab_len (int): num of all unique words across all samples, authors
+
     """
     training_dataset_raw = get_raw_labeled_data(training_file_name, 'dict')
-    bow_data_set, vocab, training_samples_stat = parse_raw_data_bow(training_dataset_raw)
+    bow_data_set, vocab, training_samples_stat = parse_raw_data_bow(
+        training_dataset_raw)
     P_c, P_tc = get_probabilities(training_samples_stat, vocab, bow_data_set)
     return P_c, P_tc, len(vocab)
 
@@ -168,13 +181,15 @@ def predict_label(bow_test, P_tc, P_c, vocab_len):
     """Predict the best match for a given BOW
 
     Args:
-        bow_test: BOW of the testing text
-        P_tc (dict): {author: {word:prob}} Conditional probability of word given class, for each author
-        P_tc (dict): {author: {word:prob}} Conditional probability of word given class, for each author
+        bow_test (dict): BOW of the testing text
+        P_c (dict): {author: num_samples_corpus/total_samples}
+        P_tc (dict): {author: {word:prob}} where prob is conditional
+                    probability of word given class, for each author
         vocab_len (int): number of all unique words across all samples all authors
 
     Returns:
-        best_match (str): predicted label
+        str: Predicted label
+
     """
     authors_ls = P_c.keys()
     results = {}
@@ -194,7 +209,7 @@ def predict_label(bow_test, P_tc, P_c, vocab_len):
 
 
 def predict(testing_file_name, P_tc, P_c, vocab_len):
-    """predict labels for all inputted samples
+    """Predict labels for all inputted samples
 
     Args:
         testing_file_name: name of the inputting test file
@@ -203,10 +218,12 @@ def predict(testing_file_name, P_tc, P_c, vocab_len):
         vocab_len (int): number of all unique words across all samples all authors
 
     Returns:
-        predictions (list): labels in order of inputted samples
-        accuracy (float): correct / (correct + incorrect)
+        tuple: predictions (list): labels in order of inputted samples
+               accuracy (float): correct / (correct + incorrect)
+
     """
-    testing_texts, testing_authors = get_raw_labeled_data(testing_file_name, 'list')
+    testing_texts, testing_authors = get_raw_labeled_data(
+        testing_file_name, 'list')
     testing_bows = [bag_of_words(text) for text in testing_texts]
     correct = 0
     incorrect = 0
@@ -239,15 +256,18 @@ if __name__ == "__main__":
     train_time = time.time() - train_start
 
     # predict on train set, no time
-    predicted_authors_train, accuracy_train = predict(training_file_name, P_tC, P_c, vocab_len)
+    predicted_authors_train, accuracy_train = predict(
+        training_file_name, P_tC, P_c, vocab_len)
 
     # predict on test set, time
     test_start = time.time()
-    predicted_authors_test, accuracy_test = predict(testing_file_name, P_tC, P_c, vocab_len)
+    predicted_authors_test, accuracy_test = predict(
+        testing_file_name, P_tC, P_c, vocab_len)
     test_time = time.time() - test_start
 
     # print results
-    for a in predicted_authors_test: print(a)
+    for a in predicted_authors_test:
+        print(a)
     print(round(train_time, 5), 'seconds (training)')
     print(round(test_time, 5), 'seconds (testing)')
     print(round(accuracy_train, 5), '(training)')
